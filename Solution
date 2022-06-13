@@ -1,0 +1,16 @@
+int Solution::maxDepth(TreeNode* A) {
+    int max_depth = 0;
+    if(!A){
+        return 0;
+    }
+    int max_left = maxDepth(A->left);
+    int max_right = maxDepth(A->right);
+    
+    //max_depth = max(max_left,max_right);
+    //return max_depth;
+    if(max_left > max_right)
+         return max_left+1;
+        
+    else
+        return max_right+1;
+}
